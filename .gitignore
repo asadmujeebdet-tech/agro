@@ -1,0 +1,7 @@
+node_modules/
+dist/
+enquiries.json
+.env
+.env.*
+!.env.example
+*.log
