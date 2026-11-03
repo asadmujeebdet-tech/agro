@@ -30,7 +30,7 @@ const P = (id,brand,cat,color,pack,name,nameUr,ingredient,ingredientUr,image)=>(
   crops:"See product label",cropsUr:"فصلوں کی تفصیل لیبل پر دیکھیں",
   use:`Active ingredient: ${ingredient}.`,
   useUr:`فعال اجزا: ${ingredientUr}۔`,
-  image:`https://www.kissanghar.pk/assets/img/product/${image}`,
+  image:id <= 8 ? `/products/p${id}.jpg` : `https://www.kissanghar.pk/assets/img/product/${image}`,
 });
 const I="Insecticide",F="Fungicide",H="Herbicide";
 const products = [
