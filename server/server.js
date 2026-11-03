@@ -43,7 +43,6 @@ const products = [
   P(6,"Bayer",H,"#8a5fb5","500 ml","Challenge","چیلنج","Aclonifen","ایکلونیفن","22221420231105914.jpg"),
   P(7,"Syngenta",I,"#c9a227","1 L","Karate 2.5 EC","کراٹے 2.5 ای سی","Lambda-cyhalothrin","لیمبڈا سائہیلوتھرین","36021520251216535.jpg"),
   P(8,"Syngenta",H,"#e07a3f","400 ml","Primextra Gold","پرائمیکسٹرا گولڈ","Atrazine + S-metolachlor","ایٹرازین اور ایس میٹولا کلور","16421620260117306.jpg"),
-  P(9,"FMC",I,"#3f8f5a","50 ml","Coragen 20 SC","کوریجن 20 ایس سی","Chlorantraniliprole","کلورینٹرانیلیپرول","17201520250103595.jpg"),
   P(10,"FMC",F,"#c0577a","120 ml","Soduku 42 SC","سوڈوکو 42 ایس سی","Chlorothalonil + Tebuconazole","کلوروتھالونل اور ٹیبوکونازول","07361720250221603.jpg"),
 ];
 

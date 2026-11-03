@@ -41,9 +41,8 @@ const ICONS = {
 
 function WhatsAppIcon() {
   return (
-    <svg className="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true">
-      <circle cx="12" cy="12" r="11" fill="#25d366" />
-      <path d="M7.1 18.1 8 15.5a7 7 0 1 1 2.4 2.2l-3.3.4Zm3.5-2.1.5.3a5.4 5.4 0 1 0-1.8-1.6l.3.5-.5 1.4 1.5-.6Zm-1.2-5.8c.1-.3.3-.4.5-.4h.3c.1 0 .3 0 .4.3l.5 1.1c.1.2.1.3 0 .5l-.4.5c-.1.1-.2.2-.1.4.2.3.5.7.9 1 .5.4.9.5 1.1.6.2.1.3 0 .4-.1l.5-.6c.1-.2.3-.2.5-.1l1 .5c.2.1.3.2.3.3 0 .2-.1.8-.5 1.1-.3.3-.8.5-1.3.4-.5-.1-1.2-.3-2-.7-1.1-.6-1.8-1.5-2-1.8-.2-.3-.8-1.1-.8-1.8 0-.7.4-1.1.7-1.2Z" fill="#fff" />
+    <svg className="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12.04 2a9.92 9.92 0 0 0-8.5 15.03L2 22l5.12-1.34A9.93 9.93 0 1 0 12.04 2Zm0 18.15a8.19 8.19 0 0 1-4.17-1.14l-.3-.18-3.04.8.81-2.97-.2-.31a8.2 8.2 0 1 1 6.9 3.8Zm4.5-6.13c-.25-.13-1.47-.73-1.7-.81-.23-.09-.4-.13-.57.13-.17.25-.65.81-.8.98-.15.17-.3.19-.55.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.1-.52.11-.11.25-.3.38-.44.12-.15.16-.25.25-.42.08-.17.04-.32-.02-.45-.07-.12-.57-1.38-.78-1.89-.2-.49-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.43 1.03 2.6c.12.17 1.77 2.7 4.29 3.79.6.26 1.07.42 1.44.54.61.19 1.16.16 1.6.1.49-.08 1.47-.61 1.68-1.2.2-.59.2-1.1.14-1.2-.06-.12-.23-.19-.48-.32Z" />
     </svg>
   );
 }
@@ -82,16 +81,10 @@ function LangSwitch({ lang, setLang }) {
   );
 }
 
-function Hero({ shop, products, lang, setLang }) {
+function Hero({ shop, lang, setLang }) {
   const t = T[lang];
-  const [rot, setRot] = useState({ x: -8, y: 0 });
-  const onMove = (e) => {
-    const r = e.currentTarget.getBoundingClientRect();
-    setRot({ x: -8 + ((e.clientY - r.top) / r.height - 0.5) * -20, y: ((e.clientX - r.left) / r.width - 0.5) * 40 });
-  };
-  const items = products.slice(0, 6);
   return (
-    <header className="hero" onMouseMove={onMove}>
+    <header className="hero">
       <nav>
         <b>{shop?.name}</b>
         <a href="#shelf">{t.products}</a>
@@ -105,17 +98,8 @@ function Hero({ shop, products, lang, setLang }) {
           <p className="lead">{lang === "ur" ? "آپ کی فصل کے تحفظ کے لیے، آپ کی مقامی منڈی میں قابلِ اعتماد رہنمائی۔" : shop?.tagline}</p>
           <a className="btn" href="#shelf">{t.browse}</a>
         </div>
-        <div className="stage" aria-hidden="true">
-          <div className="ring" style={{ transform: `rotateX(${rot.x}deg) rotateY(${rot.y}deg)` }}>
-            <div className="spin">
-              {items.map((p, i) => (
-                <div key={p.id} className="slot" style={{ transform: `rotateY(${(360 / items.length) * i}deg) translateZ(clamp(100px, 35vw, 210px))` }}>
-                  <div className="hero-product"><Art p={p} lang={lang} /></div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="floor" />
+        <div className="feature-visual">
+          <img className="hero-feature" src="/products/feature-graphics.jpeg" alt="Farmer celebrating a healthy harvest" />
         </div>
       </div>
     </header>
@@ -232,13 +216,10 @@ export default function App() {
 
   return (
     <>
-      <Hero shop={shop} products={all} lang={lang} setLang={setLang} />
+      <Hero shop={shop} lang={lang} setLang={setLang} />
       <div className={"trust " + (ur ? "urdu" : "")} dir={ur ? "rtl" : "ltr"}>
-        <Icon d={ICONS.shield} size={28} />
-        <strong>{t.auth}</strong>
-        <Icon d={ICONS.delivery} size={25} />
-        <strong>{t.homeDelivery}</strong>
-        <span><b>Dealer License</b> No: {shop?.license}</span>
+        <span className="trust-item"><Icon d={ICONS.shield} size={28} /><strong>{t.auth}</strong></span>
+        <span className="trust-item"><Icon d={ICONS.delivery} size={25} /><strong>{t.homeDelivery}</strong></span>
       </div>
       <section id="shelf" className="wrap">
         <h2 className={ur ? "urdu" : ""}>{t.shelf}</h2>
@@ -262,7 +243,7 @@ export default function App() {
         <div className="visit-grid">
           <div dir={ur ? "rtl" : "ltr"} className="contact">
             <h2 className={ur ? "urdu" : ""}>{t.visitTitle}</h2>
-            <div className="auth-badge"><Icon d={ICONS.shield} size={30} /><div><b className={ur ? "urdu" : ""}>{t.auth}</b><small><strong>Dealer License</strong> No: {shop?.license}</small></div></div>
+            <div className="auth-badge"><Icon d={ICONS.shield} size={30} /><div><b className={ur ? "urdu" : ""}>{t.auth}</b></div></div>
             <ul className="info">
               <li><Icon d={ICONS.pin} /><span>{ur ? "سٹی مارکیٹ، ملتان روڈ، خانیوال، پنجاب، پاکستان" : shop?.address}</span></li>
               <li><Icon d={ICONS.phone} /><a dir="ltr" href="tel:+923008038009">+92 300 8038009</a></li>

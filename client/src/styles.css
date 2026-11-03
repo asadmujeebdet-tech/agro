@@ -17,15 +17,8 @@ h1{font-size:clamp(2.4rem,5vw,4.5rem);margin:0 0 1rem;font-weight:800}
 .btn:active{transform:translateY(4px);box-shadow:0 2px 0 #b8952f}
 .btn.small{font-size:.9rem;padding:.55rem 1rem;box-shadow:0 4px 0 #b8952f}
 
-/* 3D stage */
-.stage{perspective:1000px;height:440px;position:relative;display:grid;place-items:center}
-.ring{transform-style:preserve-3d;transition:transform .15s ease-out;width:0;height:0}
-.spin{transform-style:preserve-3d;animation:rot 22s linear infinite}
-@keyframes rot{to{transform:rotateY(360deg)}}
-.slot{position:absolute;left:-34px;top:-80px;transform-style:preserve-3d}
-.hero-product{width:92px;height:142px;display:grid;place-items:center}
-.hero-product .photo{max-width:76px;max-height:120px}
-.floor{position:absolute;bottom:20px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,#0006,transparent 65%);transform:rotateX(75deg)}
+.feature-visual{display:grid;place-items:center}
+.hero-feature{display:block;width:min(100%,520px);height:auto;max-height:min(62vh,520px);object-fit:contain;border-radius:24px}
 
 /* CSS 3D bottle */
 .bottle{--c:#6fbf73;width:68px;height:150px;position:relative;transform-style:preserve-3d}
@@ -40,6 +33,7 @@ h1{font-size:clamp(2.4rem,5vw,4.5rem);margin:0 0 1rem;font-weight:800}
 
 /* Sections */
 .wrap{padding:5rem 5vw;max-width:1200px;margin:0 auto}
+.wrap#shelf{padding-top:2rem}
 h2{font-size:clamp(1.8rem,3.5vw,2.6rem);margin:0 0 1.5rem}
 .tools{display:grid;grid-template-columns:minmax(0,1fr) minmax(180px,250px);gap:1rem;align-items:start;margin-bottom:2rem}
 .filter-groups{display:flex;flex-wrap:wrap;min-width:0}
@@ -48,7 +42,7 @@ h2{font-size:clamp(1.8rem,3.5vw,2.6rem);margin:0 0 1.5rem}
 .tabs button.on{background:var(--moss);color:var(--bone)}
 input,textarea{padding:.7rem 1rem;border:2px solid #c9c4ae;border-radius:10px;font:inherit;background:#fff;width:100%;max-width:100%}
 .tools .tools-search{max-width:none;min-width:0}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.2rem;perspective:1200px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem;perspective:1200px}
 .card{background:#fff;border-radius:16px;padding:1rem;box-shadow:0 12px 24px -14px #0004;transition:transform .15s ease-out;transform-style:preserve-3d}
 .card-art{height:170px;display:grid;place-items:center;margin-bottom:.5rem;transform:translateZ(20px)}
 .card h3{margin:.2rem 0;font-size:1.2rem}
@@ -65,10 +59,12 @@ input,textarea{padding:.7rem 1rem;border:2px solid #c9c4ae;border-radius:10px;fo
   nav b{width:100%;margin-right:0}
   nav a{display:inline}
   .lang{margin-left:auto}
-  .hero-grid{grid-template-columns:1fr;min-height:0}
+  .hero-grid{grid-template-columns:1fr;gap:1.5rem;min-height:0}
   .hero-grid>div:first-child{text-align:center}
   .lead{margin-left:auto;margin-right:auto}
-  .stage{height:clamp(280px,44vw,360px);transform:none}
+  .hero-feature{width:min(100%,380px);max-height:min(42vh,380px)}
+  .tools{grid-template-columns:1fr}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
@@ -96,10 +92,10 @@ input,textarea{padding:.7rem 1rem;border:2px solid #c9c4ae;border-radius:10px;fo
 .modal-text ul{padding-inline-start:1.2rem;margin:.2rem 0}
 .x{position:absolute;top:10px;right:14px;border:0;background:none;font-size:2rem;cursor:pointer;color:var(--ink)}
 .actions{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;margin-top:1.2rem}
-.whatsapp-cta{display:inline-flex;align-items:center;justify-content:center;min-height:48px;min-width:210px;padding:.75rem 1.35rem!important;border-radius:12px;background:#168b45;color:#fff;font-size:1rem;font-weight:700;box-shadow:0 5px 0 #0f6332!important;transition:transform .15s,background .15s,box-shadow .15s}
-.whatsapp-cta:hover{background:#11783b;transform:translateY(-2px);box-shadow:0 7px 0 #0f6332!important}
-.whatsapp-cta:active{transform:translateY(3px);box-shadow:0 2px 0 #0f6332!important}
-.whatsapp-icon{width:20px;height:20px;vertical-align:middle;margin-inline-end:.4rem}
+.whatsapp-cta{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;min-height:48px;min-width:210px;padding:.75rem 1.35rem!important;border-radius:12px;background:var(--wheat);color:var(--ink);font-size:1rem;font-weight:700;box-shadow:0 5px 0 #b8952f!important;transition:transform .15s,background .15s,box-shadow .15s}
+.whatsapp-cta:hover{background:#f2d879;transform:translateY(-2px);box-shadow:0 7px 0 #b8952f!important}
+.whatsapp-cta:active{transform:translateY(3px);box-shadow:0 2px 0 #b8952f!important}
+.whatsapp-icon{width:22px;height:22px;flex:none;color:#168b45}
 .row{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1rem}
 .tools{align-items:flex-start}
 .form.urdu input,.form.urdu textarea{font-family:"Noto Nastaliq Urdu",serif}
@@ -137,6 +133,7 @@ input,textarea{padding:.7rem 1rem;border:2px solid #c9c4ae;border-radius:10px;fo
   .lead{font-size:1.1rem}
   .hero-feature{width:min(100%,320px);max-height:min(38vh,320px)}
   .wrap{padding:3rem 1rem}
+  .wrap#shelf{padding-top:1.5rem}
   .tools{grid-template-columns:1fr}
   .filter-groups{display:flex}
   .tools .tools-search{width:100%}
@@ -154,15 +151,17 @@ input,textarea{padding:.7rem 1rem;border:2px solid #c9c4ae;border-radius:10px;fo
   .visit{padding:3rem 1rem}
   .map,.map iframe{min-height:260px}
   .row{gap:.6rem}
+  .contact .row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
+  .contact .row .btn{min-width:0;padding:.7rem .45rem;font-size:.88rem;line-height:1.3;text-align:center}
 }
 @media (max-width:360px){
-  .tools{grid-template-columns:minmax(0,1fr) minmax(105px,34%);gap:.5rem}
+  .tools{grid-template-columns:1fr;gap:.5rem}
   .tabs{gap:.25rem}
   .tabs button{padding:.4rem .55rem;font-size:.88rem}
   .tools .tools-search{padding:.65rem .55rem;font-size:.9rem}
 }
 @media (max-width:380px){
-.grid{grid-template-columns:1fr}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   nav{gap:.55rem}
   nav a{font-size:.92rem}
   .lang button{padding:.3rem .65rem}
