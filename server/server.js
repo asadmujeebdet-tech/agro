@@ -20,11 +20,7 @@ const shop = {
   // ---- CREDIBILITY: fill in your real details ----
   license: "ENTER-YOUR-LICENSE-NUMBER",
   dealerOf: ["Jaffer Agro"], // brands you are an authorized dealer of
-<<<<<<< HEAD
-  address: "Multan, Punjab, Pakistan",
-=======
   address: "City Market, Multan Road, Khanewal, Punjab, Pakistan",
->>>>>>> 6198eaa9fd4f1cfbb748d609da72f22639b9a2a8
   hours: "Mon - Sun 10am - 6pm",
 };
 
@@ -34,25 +30,11 @@ const P = (id,brand,cat,color,pack,name,nameUr,ingredient,ingredientUr,image)=>(
   crops:"See product label",cropsUr:"فصلوں کی تفصیل لیبل پر دیکھیں",
   use:`Active ingredient: ${ingredient}.`,
   useUr:`فعال اجزا: ${ingredientUr}۔`,
-<<<<<<< HEAD
-  image:image.startsWith("/products/") ? image : `https://www.kissanghar.pk/assets/img/product/${image}`,
-=======
   image:`https://www.kissanghar.pk/assets/img/product/${image}`,
->>>>>>> 6198eaa9fd4f1cfbb748d609da72f22639b9a2a8
 });
 const I="Insecticide",F="Fungicide",H="Herbicide";
 const products = [
   // Representative product names and package images from public Kissan Ghar listings; these are not a live inventory.
-<<<<<<< HEAD
-  P(1,"Bayer",I,"#e0a526","100 g","Lasenta 40 WG","لیسنٹا 40 ڈبلیو جی","Fipronil + Imidacloprid","فپرونل اور امیڈاکلوپرڈ","/products/p1.jpg"),
-  P(2,"Bayer",F,"#2f7d8f","200 ml","Sparkle","اسپارکل","Azoxystrobin + Difenoconazole","ایزوکسِسٹرابِن اور ڈائی فینوکونازول","/products/p2.jpg"),
-  P(3,"Bayer",F,"#6d9b2f","1 kg","Sulphur 80 WDG","سلفر 80 ڈبلیو ڈی جی","Sulphur","سلفر","/products/p3.jpg"),
-  P(4,"Bayer",F,"#4aa3b5","600 ml","Infinito 68.76 SC","انفینیٹو 68.76 ایس سی","Fluopicolide + Propamocarb hydrochloride","فلوپیکولائیڈ اور پروپاموکارب ہائیڈروکلورائیڈ","/products/p4.jpg"),
-  P(5,"Bayer",I,"#b5475f","240 ml","Decis Super 100 EC","ڈیسیس سپر 100 ای سی","Deltamethrin","ڈیلٹامیتھرین","/products/p5.jpg"),
-  P(6,"Bayer",H,"#8a5fb5","500 ml","Challenge","چیلنج","Aclonifen","ایکلونیفن","/products/p6.jpg"),
-  P(7,"Syngenta",I,"#c9a227","1 L","Karate 2.5 EC","کراٹے 2.5 ای سی","Lambda-cyhalothrin","لیمبڈا سائہیلوتھرین","/products/p7.jpg"),
-  P(8,"Syngenta",H,"#e07a3f","400 ml","Primextra Gold","پرائمیکسٹرا گولڈ","Atrazine + S-metolachlor","ایٹرازین اور ایس میٹولا کلور","/products/p8.jpg"),
-=======
   P(1,"Bayer",I,"#e0a526","100 g","Lasenta 40 WG","لیسنٹا 40 ڈبلیو جی","Fipronil + Imidacloprid","فپرونل اور امیڈاکلوپرڈ","59251320250810429.jpg"),
   P(2,"Bayer",F,"#2f7d8f","200 ml","Sparkle","اسپارکل","Azoxystrobin + Difenoconazole","ایزوکسِسٹرابِن اور ڈائی فینوکونازول","14371920250725117.jpg"),
   P(3,"Bayer",F,"#6d9b2f","1 kg","Sulphur 80 WDG","سلفر 80 ڈبلیو ڈی جی","Sulphur","سلفر","07211520250606510.jpg"),
@@ -62,7 +44,6 @@ const products = [
   P(7,"Syngenta",I,"#c9a227","1 L","Karate 2.5 EC","کراٹے 2.5 ای سی","Lambda-cyhalothrin","لیمبڈا سائہیلوتھرین","36021520251216535.jpg"),
   P(8,"Syngenta",H,"#e07a3f","400 ml","Primextra Gold","پرائمیکسٹرا گولڈ","Atrazine + S-metolachlor","ایٹرازین اور ایس میٹولا کلور","16421620260117306.jpg"),
   P(9,"FMC",I,"#3f8f5a","50 ml","Coragen 20 SC","کوریجن 20 ایس سی","Chlorantraniliprole","کلورینٹرانیلیپرول","17201520250103595.jpg"),
->>>>>>> 6198eaa9fd4f1cfbb748d609da72f22639b9a2a8
   P(10,"FMC",F,"#c0577a","120 ml","Soduku 42 SC","سوڈوکو 42 ایس سی","Chlorothalonil + Tebuconazole","کلوروتھالونل اور ٹیبوکونازول","07361720250221603.jpg"),
 ];
 
