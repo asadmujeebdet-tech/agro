@@ -37,6 +37,7 @@ const ICONS = {
   pin: "M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0zM12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z",
   shield: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4",
   delivery: "M3 5h11v12H3zM14 9h4l3 4v4h-7M7 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM17 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4z",
+  brand: "M12 21v-8m0 0C12 8 8 5 3 5c0 5 3 8 9 8Zm0-3c0-5 4-8 9-8 0 5-4 8-9 8Z",
 };
 
 function WhatsAppIcon() {
@@ -86,7 +87,7 @@ function Hero({ shop, lang, setLang }) {
   return (
     <header className="hero">
       <nav>
-        <b>{shop?.name}</b>
+        <b className="brand"><Icon d={ICONS.brand} size={26} />{shop?.name}</b>
         <a href="#shelf">{t.products}</a>
         <a href="#visit">{t.visit}</a>
         <a href="#enquiry">{t.ask}</a>
