@@ -6,7 +6,11 @@
     "dev": "concurrently -k -n API,WEB \"npm run dev:server\" \"npm run dev:client\"",
     "dev:server": "npm run dev --prefix server",
     "dev:client": "npm run dev --prefix client",
+<<<<<<< HEAD
     "build": "npm run build --prefix client",
+=======
+    "build": "npm install --prefix server && npm install --prefix client && npm run build --prefix client",
+>>>>>>> 6198eaa9fd4f1cfbb748d609da72f22639b9a2a8
     "start": "npm start --prefix server"
   },
   "devDependencies": {
